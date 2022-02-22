@@ -17,8 +17,10 @@ export class BasicView {
   constructor() {
     this.containerElement = document.createElement("div");
     document.body.appendChild(this.containerElement);
-
-
+    
+    this.scene=new THREE.Scene();
+    this.camera=new THREE.PerspectiveCamera(45,window.innerWidth/window.innerHeight,1,200000);
+    this.camera.position.z=-1000;
   }
 
   /**
