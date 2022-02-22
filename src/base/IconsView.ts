@@ -40,7 +40,7 @@ export class IconsView extends BasicView {
     // ------------------------------
     const plane=new THREE.PlaneBufferGeometry(50000,50000,1,1);
     const mat=new
-    THREE.MeshBasicMaterial({color: 0xFBC702});
+    THREE.MeshBasicMaterial({color: 0x3c6468});
     const bg=new THREE.Mesh(plane,mat);
     this.scene.add(bg);
     this._bg=bg;

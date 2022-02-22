@@ -6,7 +6,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #FBC702;
+  background: #3c6468;
 }
 
 #coverBlack {
@@ -17,5 +17,5 @@ body {
   width: 100%;
   height: 100%;
   opacity: 1;
-  background: #FBC702;
+  background: #3c6468;
 }
