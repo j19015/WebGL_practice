@@ -31,14 +31,29 @@ export class IconsView extends BasicView {
     // ------------------------------
     // カメラの配置
     // ------------------------------
-
+    this.camera.far=100000;
+    this.camera.near=1;
+    this.camera.position.z=5000;
+    this.camera.lookAt(this.HELPER_ZERO);
     // ------------------------------
     // 背景の作成
     // ------------------------------
-
+    const plane=new THREE.PlaneBufferGeometry(50000,50000,1,1);
+    const mat=new
+    THREE.MeshBasicMaterial({color: 0xFBC702});
+    const bg=new THREE.Mesh(plane,mat);
+    this.scene.add(bg);
+    this._bg=bg;
     // ------------------------------
     // 3D空間のパーツを配置
     // ------------------------------
+    const light =new
+    THREE.DirectionalLight(0xffffff);
+    light.position.set(0,1,+1).normalize();
+    this.scene.add(light);
+    //particle motion
+    this._wrap=new THREE.Object3D();
+    this.scene.add(this._wrap);
   }
 
   protected createParticle(sharedTexture: THREE.Texture) {
