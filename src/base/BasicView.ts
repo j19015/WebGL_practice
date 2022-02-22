@@ -21,6 +21,16 @@ export class BasicView {
     this.scene=new THREE.Scene();
     this.camera=new THREE.PerspectiveCamera(45,window.innerWidth/window.innerHeight,1,200000);
     this.camera.position.z=-1000;
+
+    //アンチエイリアス設定有無
+    const needAntialias=window.devicePixelRatio===1.0
+    this.renderer=new
+    THREE.WebGL1Renderer({antialias:needAntialias});
+    this.renderer.setClearColor(0xFBC702);
+    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setSize(window.innerWidth,window.innerHeight);
+    this.containerElement.appendChild(this.renderer.domElement);
+    window.addEventListener("resize",(e)=>{this.handleResize(e)})
   }
 
   /**
